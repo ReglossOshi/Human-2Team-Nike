@@ -1,0 +1,88 @@
+@charset "EUC-KR";
+/* 영수증 스타일 */
+.pro_add_header {
+  margin: 50px auto;
+  width: 80%;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.pro_add_header h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pro_add {
+  display: flex;
+  flex-direction: column;
+}
+
+.pro_add h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.proInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.proInfo strong {
+  font-weight: bold;
+}
+
+.add_gender,
+.add_category,
+.add_type,
+.add_size,
+.add_color,
+.add_price {
+  width: calc(50% - 10px); /* 반응형으로 폭 설정 */
+}
+
+.add_gender input[type="radio"] {
+  margin-right: 10px;
+}
+
+.add_price input[type="text"] {
+  width: 50%; /* 가격 입력 필드 너비 조정 */
+}
+
+.btn-w {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.input-btn-w {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-btn-w:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .proInfo strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .add_gender,
+  .add_category,
+  .add_type,
+  .add_size,
+  .add_color,
+  .add_price {
+    width: 100%; /* 반응형에서 필드 전체 너비로 설정 */
+  }
+}
