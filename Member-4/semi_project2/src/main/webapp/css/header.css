@@ -15,6 +15,7 @@ header{
 	left:0;
 	height:80px;
 	background-color: #40A2D8;
+	z-index: 1;
 }
 .logo{
 	margin:10px 30px;
