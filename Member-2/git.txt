@@ -1,0 +1,33 @@
+$ git init --> 폴더에 git 정보 담기
+
+$ git remote add origin (GitHub주소) --> git 연결
+
+$ git remote update --> 원격 브랜치 가져오기 위한 업데이트
+
+$ git branch -r --> 원격 브랜치 확인하기
+
+$ git branch -a --> 모든 브랜치 확인하기
+
+$ git checkout -t 브랜치 가져오기
+
+git add 파일명 --> 다음 변경 기록할때까지 변경분 모아놓는 작업
+
+git add 파일명 
+git add . // 전체 add (점(.)은 모든 것을 의미)
+git add *.txt // 모든 txt 파일 업로드
+git add project/app/*/ //디렉토리 업로드
+git add --update // 현재 git이 추적하고 있는 파일들만 add
+
+git pull {원격저장소별칭 보통 origin이라고 함} master --> 원격 파일 가져오기
+
+git status --> add 명령어로 staging area 들어간 파일 확인
+
+git rm --cached --> 만약, add 된 test.txt파일을 unstage(add취소) 하고싶다면 아래 명령어를 실행하면 된다.
+
+git rm --cached 파일명 - add 한 파일 unstage 명령
+
+git commit -m "커밋내용" --> staging area에 저장되어있는 변경 사항들을 로컬저장소에 등록(변경사항 확정)
+
+git commit --amend -m "수정된 메시지" --> 커밋 메시지 잘못 작성했을 경우 메시지 수정
+
+git push -u origin master --> 원격 저장소에 commit된 파일들을 모두 업로드
