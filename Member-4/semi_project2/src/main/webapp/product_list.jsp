@@ -42,6 +42,20 @@
 	</div>
   </div>
 
+	<!-- 온체인지 -->
+	<div>
+		 <select id="onchange" name="onchange" class="onchange" onchange="changeSelect();">
+			<option value="item_num" class="">제품번호</option>
+			<option value="gender">성별</option>
+			<option value="category">카테고리</option>
+			<option value="item_type">종류</option>
+			<option value="item_name">제품이름</option>
+			<option value="item_size">사이즈</option>
+			<option value="color">색상</option>
+			<option value="price">가격</option>
+		</select>
+	</div>
+
 <!-- 제품 추가 -->
   <div class="add_btn">
       <a href="./product_add_form.jsp">제품 등록</a>
@@ -66,19 +80,6 @@
 	</table>
 </div>
 
-<!-- 온체인지 -->
-<div>
-	 <select id="onchange" name="onchange" class="onchange" onchange="chageSelect()">
-		<option value="item_num" class="">제품번호</option>
-		<option value="gender">성별</option>
-		<option value="category">카테고리</option>
-		<option value="item_type">종류</option>
-		<option value="item_name">제품이름</option>
-		<option value="item_size">사이즈</option>
-		<option value="color">색상</option>
-		<option value="price">가격</option>
-	</select>
-</div>
 
 <%
     String JDBC_URL = "jdbc:oracle:thin:@1.220.247.78:1522:orcl";
@@ -218,12 +219,12 @@
 		}
 	}
 	
-	function chageSelect(){
+	function changeSelect(){
+		//alert('aaa');
 		var select  = document.getElementById("onchange");
 	    var selectValue = select.options[select.selectedIndex].value;   // select element에서 선택된 option의 value가 저장된다.
-	    location.href = "./product_list_onchange.jsp?onchange=" + selectValue;  // 페이지의 주소를 material = 선택된데이터(즉 WHERE 원재자명 = selectValue 이런느낌)
+	    location.href = "./product_list_onchange.jsp?onchange=" + selectValue + "&search=" + $('#search_pro').val();  // 페이지의 주소를 material = 선택된데이터(즉 WHERE 원재자명 = selectValue 이런느낌)
 	}
-	
 </script>
 
 <%@ include file="footer.jsp"%>
