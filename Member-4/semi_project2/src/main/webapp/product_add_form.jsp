@@ -14,13 +14,13 @@
 <body>
 <%@ include file="header.jsp" %>
   <div class="pro_add_header">
-    <h1><a href="./product_list.jsp" class="proList">
+    <h1><a href="./product_list.jsp" id="form1" class="proList" onSubmit="return false">
     		<span class="material-symbols-outlined">arrow_back</span>제품 목록
     	</a>
     </h1>
     <div class="pro_add">
       <h2>제품 등록 작성란</h2>
-      <form action="./product_add.jsp" id="form1" method="post" onSubmit="return false">
+      <form action="./product_add.jsp" method="post">
         <div class="proInfo">
           <div class="item_num">
             <strong>제품 번호</strong><br>
@@ -38,8 +38,7 @@
           <div class="add_category">
             <strong>카테고리</strong><br>
               <select id="category" name="category">
-              <option value="A">---</option>
-                <option value="탑&티셔츠">탑&티셔츠</option>
+                <option value="탑&티셔츠</">탑&티셔츠</option>
                 <option value="후디&크루">후디&크루</option>
                 <option value="재킷&베스트">재킷&베스트</option>
               </select>
@@ -49,7 +48,6 @@
           <div class="add_type">
             <strong>종류</strong><br>
               <select id="type" name="type">
-	            <option value="A">---</option>
                 <option value="긴팔">긴팔</option>
                 <option value="반팔">반팔</option>
                 <option value="후디">후디</option>
@@ -68,7 +66,6 @@
           <div class="add_size">
             <strong>사이즈</strong><br>
               <select id="size" name="size">
-	            <option value="A">---</option>
                 <option value="XS">XS</option>
                 <option value="X">X</option>
                 <option value="M">M</option>
@@ -117,14 +114,14 @@
   			
   			return;
   		}
-  		if ($('#category').val() == "A") { 	
+  		if ($('#category').val()) { 	
   			alert('카테고리를 선택해주세요.');
   			$('#category').focus();		
   			
   			return;
   		}
-  		if ($('#type').val() == "A") {	
-  			alert('종류를 선택해주세요.');
+  		if (!$('#type').val()) {	
+  			alert('유형을 선택해주세요.');
   			$('#type').focus();	
   			
   			return;
@@ -135,7 +132,7 @@
   			
   			return;
   		}
-  		if ($('#size').val() == "A") {	
+  		if (!$('#size').val()) {	
   			alert('사이즈를 선택해주세요.');
   			$('#size').focus();		
   			
